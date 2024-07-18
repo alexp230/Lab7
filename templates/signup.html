@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+<head>
+    {% block title %}Sign-up{% endblock %}
+
+    {% block styles %}
+    <style>
+        .container{
+            background-color: aquamarine;
+            padding-bottom: 2%;
+        }
+    </style>
+    {% endblock %}
+</head>
+
+{% block content %}
+<form action="#" method="post">
+    <div class="container" >
+        <h1>Sign In</h1>
+        <hr>
+
+        <h3>First Name:</h3>
+        <input type="text" placeholder="Enter First Name " name="fname" required>
+
+        <h3>Last Name:</h3>
+        <input type="text" placeholder="Enter Last Name" name="lname" required>
+
+        <h3>Email:</h3>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <h3>Password:</h3>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <h3>Confirm Password:</h3>
+        <input type="password" placeholder="Confirm Password" name="password-confirm" required>
+
+        <input type="submit" value="Submit">
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages%}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+  </form> 
+
+{% endblock %}

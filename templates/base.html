@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+
+        
+        {% block styles %} {% endblock %}
+
+        <style>
+            body{
+                background-color: beige;
+            }
+            .navbar ul{
+                list-style-type: none;
+                background-color: darkgray;
+                padding: 0px;
+                margin: 0px;
+                overflow: hidden;
+            }
+    
+            .navbar a{
+                color: whitesmoke;
+                text-decoration: none;
+                font-size: 30px;
+                padding: 10px;
+                display: block;
+                text-align: center;
+            }
+    
+            .navbar a:hover{
+                background-color: grey;
+            }
+    
+            .navbar li{
+                float: left
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <nav class="navbar"> 
+            <ul>
+                <li><a href="/">SignUp</a></li>
+                <li><a href="/signin">SignIn</a></li>
+            </ul>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
